@@ -1,13 +1,17 @@
 package restaurant;
 
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
 
 public class Menu {
 
     private Date lastUpdated;
-    private HashMap menuItems;
-    private HashMap oldMenuItems;
+    private ArrayList<MenuItem> items;
+
+    public Menu(Date lastUpdated, ArrayList<MenuItem> items) {
+        this.lastUpdated = lastUpdated;
+        this.items = items;
+    }
 
     public Date getLastUpdated() {
         return lastUpdated;
@@ -17,19 +21,19 @@ public class Menu {
         this.lastUpdated = lastUpdated;
     }
 
-    public HashMap getMenuItems() {
-        return menuItems;
+    public ArrayList<MenuItem> getItems(){
+        return items;
     }
 
-    public void setMenuItems(HashMap menuItems) {
-        this.menuItems = menuItems;
+    public void setItems(){
+        this.items = items;
     }
 
-    public HashMap getOldMenuItems() {
-        return oldMenuItems;
-    }
-
-    public void setOldMenuItems(HashMap oldMenuItems) {
-        this.oldMenuItems = oldMenuItems;
+    public void printMenu(){
+        String myString = "";
+        for(MenuItem item : this.items){
+            myString += item.getName() + ": " + item.getPrice() + "\n";
+        }
+        System.out.println(myString);
     }
 }

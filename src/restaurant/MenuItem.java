@@ -3,12 +3,12 @@ package restaurant;
 public class MenuItem {
 
     private String name;
-    private String price;
+    private double price;
     private String description;
     private String category;
-    private String newItem;
+    private boolean newItem;
 
-    public MenuItem(String name, String price, String description, String category, String newItem) {
+    public MenuItem(String name, double price, String description, String category, boolean newItem) {
         this.name = name;
         this.price = price;
         this.description = description;
@@ -24,11 +24,11 @@ public class MenuItem {
         this.name = name;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -48,13 +48,7 @@ public class MenuItem {
         this.category = category;
     }
 
-    public String getNewItem() {
-        return newItem;
-    }
+    public boolean isNewItem() { return newItem; }
 
-    public void setNewItem(String newItem) {
-        this.newItem = newItem;
-    }
-
-
+    public void setNewItem(boolean newItem) { this.newItem = newItem; }
 }
